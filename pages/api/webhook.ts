@@ -8,7 +8,7 @@ const supabase = createClient(
 );
 
 type Data = {
-  status: string;
+  message: string;
 };
 
 const storeEventObject = async (req: NextApiRequest) => {
@@ -26,5 +26,5 @@ const storeEventObject = async (req: NextApiRequest) => {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   await storeEventObject(req);
-  res.status(204).json({ status: 'OK' });
+  res.status(200).json({ message: 'OK' });
 }
