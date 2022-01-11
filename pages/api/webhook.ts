@@ -27,9 +27,5 @@ const storeEventObject = async (req: NextApiRequest) => {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const { body } = req;
   await storeEventObject(req);
-  if (body?.type === 'TRANSACTION_STATUS_UPDATED') {
-    return res.status(400).json({ message: 'Bad Request' });
-  } else {
-    return res.status(200).json({ message: 'OK' });
-  }
+  return res.status(200).json({ message: 'OK' });
 }
