@@ -21,6 +21,8 @@ const storeEventObject = async (req: NextApiRequest) => {
       body,
     },
   ]);
+  console.log('Query: ', query);
+  console.log('Body: ', body);
   console.log('Error: ', error);
 };
 
